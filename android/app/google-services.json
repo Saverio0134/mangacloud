@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "442166278518",
+    "project_id": "mangacloud-1fcba",
+    "storage_bucket": "mangacloud-1fcba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442166278518:android:bd9960496af8328034a257",
+        "android_client_info": {
+          "package_name": "com.saveriogramegna.mangacloud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsnZIJ687cOn_lvQkhHtxDAV8GauyWyzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
