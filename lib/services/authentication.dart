@@ -17,13 +17,16 @@ class AuthenticationService {
   // Import per ScaffoldMessenger
 
   Future<User?> createAccount(
-      {required String emailAddress, required String password, required nickname}) async {
+      {required String emailAddress,
+      required String password,
+      required nickname}) async {
     try {
       final credential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
-      final user = Utente(uid: credential.user!.uid, nickname: nickname, email: emailAddress);
+      final user = Utente(
+          uid: credential.user!.uid, nickname: nickname, email: emailAddress);
       _db.collection("utente").doc(user.uid).set(user.toJson());
       return credential.user!;
     } on FirebaseAuthException catch (e) {
@@ -124,14 +127,14 @@ class AuthenticationService {
   }
 
   Future<Utente?> recuperaUtente() async {
-    if(currentUser != null) {
-      final querySnapshot = await _db.collection("utente").doc(currentUser!.uid).get();
+    if (currentUser != null) {
+      final querySnapshot =
+          await _db.collection("utente").doc(currentUser!.uid).get();
       final utente = Utente.fromMap(querySnapshot.data()!);
       final prefs = await SharedPreferences.getInstance();
       prefs.setString("nickname", utente.nickname);
       return utente;
-    }
-    else {
+    } else {
       return null;
     }
   }
@@ -152,9 +155,8 @@ class AuthenticationService {
             'Email di recupero password inviata!',
             style: Theme.of(navigatorKey.currentContext!).textTheme.labelLarge,
           ),
-          backgroundColor: Theme.of(navigatorKey.currentContext!)
-              .colorScheme
-              .secondary,
+          backgroundColor:
+              Theme.of(navigatorKey.currentContext!).colorScheme.secondary,
         ),
       );
     } catch (e) {
@@ -170,18 +172,19 @@ class AuthenticationService {
     return null;
   }
 
-  Future<User?> confirmResetPassword({required String newPassword, required String code}) async {
+  Future<User?> confirmResetPassword(
+      {required String newPassword, required String code}) async {
     try {
-      await _firebaseAuth.confirmPasswordReset(code: code, newPassword: newPassword);
+      await _firebaseAuth.confirmPasswordReset(
+          code: code, newPassword: newPassword);
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
         SnackBar(
           content: Text(
             'Password resettata con successo',
             style: Theme.of(navigatorKey.currentContext!).textTheme.labelLarge,
           ),
-          backgroundColor: Theme.of(navigatorKey.currentContext!)
-              .colorScheme
-              .secondary,
+          backgroundColor:
+              Theme.of(navigatorKey.currentContext!).colorScheme.secondary,
         ),
       );
     } catch (e) {
@@ -189,7 +192,7 @@ class AuthenticationService {
         SnackBar(
           content: Text('Si è verificato un errore.',
               style:
-              Theme.of(navigatorKey.currentContext!).textTheme.labelLarge),
+                  Theme.of(navigatorKey.currentContext!).textTheme.labelLarge),
           backgroundColor: Colors.red,
         ),
       );

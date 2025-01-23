@@ -123,7 +123,7 @@ class _MangaDetails extends State<MangaDetails> {
                           ],
                         )),
                     Expanded(child: Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      padding: const EdgeInsets.all(10),
                       child: ListView.builder(
                         cacheExtent: 80 * double.parse(snapshot.data!.length.toString()),
                         itemCount: snapshot.data!.length,

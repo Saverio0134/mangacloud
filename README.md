@@ -1,16 +1,21 @@
-# mangacloud
+# Manga Cloud
 
-Lettore di manga
+**Manga Cloud** è stata creata per permetterti di leggere manga gratuitamente, senza interruzioni pubblicitarie e con la possibilità di scaricare capitoli e volumi per una lettura offline. Accedi ai tuoi manga preferiti in modo semplice, comodo e senza fastidi!
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Caratteristiche Principali
 
-A few resources to get you started if this is your first Flutter project:
+- **Download locale di volumi e capitoli**  
+  Scarica facilmente capitoli o interi volumi e accedi ai tuoi manga preferiti anche offline, ovunque ti trovi.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Salvataggio automatico della lettura**  
+  Manga Cloud salva automaticamente i progressi di lettura, permettendoti di riprendere esattamente da dove hai interrotto.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Ripresa immediata dalla pagina precedente**  
+  Continua la lettura dall'ultima pagina letta, senza bisogno di cercare manualmente il capitolo o il volume.
+
+- **Notifiche su nuovi capitoli e manga**  
+  Ricevi aggiornamenti quando vengono pubblicati nuovi capitoli o volumi dei tuoi manga preferiti o quando viene aggiunto un nuovo titolo alla libreria.
+
+---

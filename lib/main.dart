@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:mangacloud/pages/auth.dart';
 import 'package:mangacloud/routes.dart';
 import 'package:mangacloud/services/authentication.dart';
+import 'package:mangacloud/services/download_manager.dart';
 import 'package:mangacloud/services/notifiche.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:mangacloud/pages/home_page.dart';
@@ -16,7 +18,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await NotificheService().initiNotifications();
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+    create: (_) => DownloadManager(),
+    child: const MyApp(),
+  ),
+  );
 }
 
 class MyApp extends StatefulWidget {
